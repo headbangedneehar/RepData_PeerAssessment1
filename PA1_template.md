@@ -82,7 +82,7 @@ plot1<-ggplot(stepsPerDay_noNA)
 plot1 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=5.5,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))
 ```
 
-![plot of chunk PlotHist](figure/PlotHist-1.png) 
+<img src="figure/PlotHist-1.png" title="plot of chunk PlotHist" alt="plot of chunk PlotHist" style="display: block; margin: auto;" />
 
 
 ##Calculating Mean and Median of total number of steps taken per day
@@ -139,7 +139,7 @@ plotStepsPerInterval<-ggplot(avgStepsPerInterval)
 plotStepsPerInterval+geom_line(aes(x=interval,y=steps,colour=steps))+labs(x="INTERVAL",y="STEPS",title="Average Steps Per Interval")+scale_x_continuous(limits=c(0,max(avgStepsPerInterval$interval)+100),breaks=seq(0,2500,by=100))+scale_y_continuous(limits=c(0,225),breaks=seq(0,225,by=25))+theme(axis.text=element_text(angle=45,face="bold",colour="black"))
 ```
 
-![plot of chunk PlotStepsPerInterval](figure/PlotStepsPerInterval-1.png) 
+<img src="figure/PlotStepsPerInterval-1.png" title="plot of chunk PlotStepsPerInterval" alt="plot of chunk PlotStepsPerInterval" style="display: block; margin: auto;" />
 
 ##Calculating the Interval with maximum number of steps, on average accross all the days.  
 First we calculate the maximum number of steps per each interval. For this I've grouped by interval and summarissed by sum of steps on the data set.
@@ -230,7 +230,7 @@ plot2<-ggplot(stepsPerDay2)
 plot2 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=5.5,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))
 ```
 
-![plot of chunk PlotHist2](figure/PlotHist2-1.png) 
+<img src="figure/PlotHist2-1.png" title="plot of chunk PlotHist2" alt="plot of chunk PlotHist2" style="display: block; margin: auto;" />
 
 ##Calculating Mean and Median of total number of steps taken per day for imputed data-set.
 The mean() and median() are used and applied on the variable containing the summarised total number of steps per each date.
@@ -281,4 +281,4 @@ plot3<-ggplot(imputeActivity)
 plot3+labs(x="INTERVAL",y="STEPS",title="Steps per Interval per Weekdays, Weekends")+geom_line(aes(x=interval,y=steps,colour=days))+facet_grid(~days)+ scale_color_manual(values = c("steelblue","red"))+theme(legend.position="none",axis.text=element_text(face="bold",colour="black",angle=45))+scale_x_continuous(limits=c(0,max(avgStepsPerInterval$interval)+100),breaks=seq(0,2500,by=250))+scale_y_continuous(limits=c(0,225),breaks=seq(0,225,by=25))
 ```
 
-![plot of chunk panelPlot](figure/panelPlot-1.png) 
+<img src="figure/panelPlot-1.png" title="plot of chunk panelPlot" alt="plot of chunk panelPlot" style="display: block; margin: auto;" />
