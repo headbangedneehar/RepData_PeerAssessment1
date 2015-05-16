@@ -79,7 +79,7 @@ Here the NA values are ignored as they are coerced to zero, when plotted show ze
 ```r
 stepsPerDay_noNA<-summarise(activity_noNA,steps=sum(steps))
 plot1<-ggplot(stepsPerDay_noNA)
-plot1 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=5.5,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))
+plot1 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=9,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))+scale_x_discrete(breaks=c(stepsPerDay_noNA$date[seq(1,length(stepsPerDay_noNA$steps),by=2)]))
 ```
 
 <img src="figure/PlotHist-1.png" title="plot of chunk PlotHist" alt="plot of chunk PlotHist" style="display: block; margin: auto;" />
@@ -227,7 +227,7 @@ Here the NA values are replaced with average step values of each interval.
 ```r
 stepsPerDay_noNA<-summarise(activity_noNA,steps=sum(steps))
 plot2<-ggplot(stepsPerDay2)
-plot2 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=5.5,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))
+plot2 + geom_histogram(aes(y=steps,x=date,fill=steps),stat="identity")+theme(axis.text.x=element_text(angle=90,size=9,face="bold",colour="black"),axis.text.y=element_text(face="bold",colour="black"))+labs(x="STEPS",y="DATE",title="Total Steps Each Day")+scale_y_continuous(limits=c(0,22000),breaks=seq(0,22000,by=2000))+scale_x_discrete(breaks=c(stepsPerDay2$date[seq(1,length(stepsPerDay2$steps),by=2)]))
 ```
 
 <img src="figure/PlotHist2-1.png" title="plot of chunk PlotHist2" alt="plot of chunk PlotHist2" style="display: block; margin: auto;" />
